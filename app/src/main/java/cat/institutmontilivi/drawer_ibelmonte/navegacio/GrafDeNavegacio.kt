@@ -15,6 +15,8 @@ import cat.institutmontilivi.drawer_ibelmonte.ui.pantalles.PDetallRius
 import cat.institutmontilivi.drawer_ibelmonte.ui.pantalles.PLlistaArbres
 import cat.institutmontilivi.drawer_ibelmonte.ui.pantalles.PLlistaMuntanyes
 import cat.institutmontilivi.drawer_ibelmonte.ui.pantalles.PLlistaRius
+import cat.institutmontilivi.drawer_ibelmonte.ui.pantalles.Pantalla1
+import cat.institutmontilivi.drawer_ibelmonte.ui.pantalles.Pantalla2
 
 @Composable
 fun GrafDeNavegacio(controladorDeNavegacio: NavHostController = rememberNavController(),
@@ -70,6 +72,22 @@ fun GrafDeNavegacio(controladorDeNavegacio: NavHostController = rememberNavContr
                 val n = it.arguments?.getInt(ArgumentDeNavegacio.RiusContent.clau)
                 requireNotNull(n)
                 PDetallRius(id=n)
+            }
+        }
+        navigation(startDestination = Destinacio.LlistaCategory.rutaBase,
+            route = CategoriaNavegacio.Category.rutaPrevia)
+        {
+            composable(route = Destinacio.LlistaCategory.rutaGenerica)
+            {
+                Pantalla1()
+            }
+        }
+        navigation(startDestination = Destinacio.Llistacategory2.rutaBase,
+            route = CategoriaNavegacio.category2.rutaPrevia)
+        {
+            composable(route = Destinacio.Llistacategory2.rutaGenerica)
+            {
+                Pantalla2()
             }
         }
     }

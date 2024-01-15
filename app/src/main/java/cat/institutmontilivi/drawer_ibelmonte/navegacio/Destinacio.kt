@@ -19,7 +19,9 @@ enum class CategoriaNavegacio(
 {
     CategoriaArbres("CategoriaArbres", Icons.Default.Notifications, "Arbres"),
     CategoriaMuntanyes("CategoriaMuntanyes", Icons.Default.Home, "Muntanyes"),
-    CategoriaRius("CategoriaRius", Icons.Default.Share, "Rius")
+    CategoriaRius("CategoriaRius", Icons.Default.Share, "Rius"),
+    Category("Category", Icons.Default.Share, "Category"),
+    category2("category2", Icons.Default.Share, "category2")
 }
 sealed class Destinacio(
     val rutaBase: String,
@@ -36,7 +38,8 @@ sealed class Destinacio(
     object LlistaArbres: Destinacio(CategoriaNavegacio.CategoriaArbres.rutaPrevia + "/CategoriaArbres")
     object LlistaMuntanyes: Destinacio(CategoriaNavegacio.CategoriaMuntanyes.rutaPrevia + "/CategoriaMuntanyes")
     object LlistaRius: Destinacio(CategoriaNavegacio.CategoriaRius.rutaPrevia + "/CategoriaRius")
-
+    object LlistaCategory: Destinacio(CategoriaNavegacio.Category.rutaPrevia + "/Category")
+    object Llistacategory2: Destinacio(CategoriaNavegacio.category2.rutaPrevia + "/category2")
     object DetallArbre:Destinacio(CategoriaNavegacio.CategoriaArbres.rutaPrevia + "/DetallArbres", listOf(ArgumentDeNavegacio.ArbresContent))
     {
         fun CreaRutaAmbArguments(idArbre:Int) = "$rutaBase/$idArbre"

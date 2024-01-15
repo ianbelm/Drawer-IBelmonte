@@ -224,3 +224,13 @@ fun PDetallRius(id: Int){
         }
     }
 }
+@Composable
+fun Pantalla1()
+{
+    Text(text = "Pantalla 1")
+}
+@Composable
+fun Pantalla2()
+{
+    Text(text = "Pantalla 2")
+}
